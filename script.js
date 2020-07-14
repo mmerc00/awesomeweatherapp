@@ -1,6 +1,8 @@
 //DEPENDENCIES================================================
 //DOM Elements
 //Initial DATA
+var userSearch = "";
+var userCityBtn = "";
 var cityName = "";
 var queryURL =
   "http://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -21,7 +23,14 @@ $(document).ready(() => {
 
 //FUNCTIONS====================================================
 //USER INPUT===================================================
+function citiesInterestedIn(){
+  localStorage.
+}
+
+
+
 //A user types a city
+$(searchBar)
 //A user submits their search
 //A users search history is saved
 //then the currrent weather of that city shows up
