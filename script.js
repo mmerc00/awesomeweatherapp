@@ -24,7 +24,6 @@ $(document).ready(); => {
 // function searchCity(event) {
 //   event.preventDefault();
 
-//   //API STUFF
 //   var cityName = $("#cityName").val();
 //   searchHistory.unshift(cityName);
 //   displayHistory();
