@@ -48,7 +48,7 @@ var searchBtn = $("#city-info-button");
 //button click, prevent default stops search from refreshing
 searchBtn.on("click", function (event) {
   event.preventDefault();
-  //City Search
+  //City search function to grab weather data
   var citySearch = $("#citySearch").val();
   console.log("City Search:", citySearch);
   var apiKey = "b4ca2617fda8551aa1b532379a0245d5";
@@ -58,39 +58,40 @@ searchBtn.on("click", function (event) {
     "&units=imperial&appid=" +
     apiKey;
   console.log("queryURL:", queryURLCurrent);
+  //used imperial to get farenheight
   //then the currrent weather of that city shows up
   $.ajax({
     url: queryURLCurrent,
     method: "GET",
   }).then(function (response) {
     console.log(response);
-    // City Name
+    // Pulls city name
     var cityName = response.name;
     $("#city-name").text(cityName);
     console.log("cityName:", cityName);
-    // Date
+    // pulls city date
     var date = moment();
     var dateDisplay = date.format("dddd MMMM Do YYYY");
     $("#date").text(dateDisplay);
     console.log("Date Display:", dateDisplay);
-    // Icon
+    // icon var that will display in card upon search
     var iconCode = response.weather[0].icon;
     var weatherIcon = "http://openweathermap.org/img/w/" + iconCode + ".png";
     console.log(iconCode);
     $("#icon-image").attr("src", weatherIcon);
-    // Temp
+    // tempature var that pulls temp from api and fills it in card
     var temperature = response.main.temp;
     $("#temperature").text(temperature);
     console.log("Temperature:", temperature);
-    // Humidity
+    // humidity pullled from api that will display along everyth
     var humidity = response.main.humidity;
     $("#humidity").text(humidity);
     console.log("Humidity", humidity);
-    // Wind Speed
+    // wind speed information pulled from api
     var windSpeed = response.wind.speed;
     $("#wind-speed").text(windSpeed);
     console.log("Wind Speed:", windSpeed);
-    // UV Index
+    // uv index using long lat
     var latitude = response.coord.lat;
     var longitude = response.coord.lon;
     var uvURL =
@@ -101,7 +102,7 @@ searchBtn.on("click", function (event) {
       "&lon=" +
       longitude;
     console.log("uvURL:", uvURL);
-
+    //uv index stuff that I am not sure why isnt working
     $.ajax({
       url: uvURL,
       method: "GET",
@@ -111,11 +112,11 @@ searchBtn.on("click", function (event) {
       $("#uv-index").text(uvIndex);
       if (uvIndex < 2) {
         $(".index").attr("class", "low");
-        console.log("You're safe!");
+        console.log("Dont worry, You're safe!");
       }
       if (uvIndex >= 2 && uvIndex <= 5) {
         $(".index").attr("class", "moderate");
-        console.log("Getting risky");
+        console.log("It's getting risky");
       }
       if (uvIndex > 5 && uvIndex <= 7) {
         $(".index").attr("class", "high");
@@ -123,11 +124,11 @@ searchBtn.on("click", function (event) {
       }
       if (uvIndex > 7 && uvIndex <= 10) {
         $(".index").attr("class", "very-high");
-        console.log("You better stay inside!");
+        console.log("Yikes! You better stay inside!");
       }
       if (uvIndex > 10) {
         $(".index").attr("class", "extreme");
-        console.log("You will ignite on fire");
+        console.log("You will defintely ignite on fire");
       }
       console.log("UV Index:", uvIndex);
     });
