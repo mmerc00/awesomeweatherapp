@@ -1,0 +1,12 @@
+#uv-index {
+  color: yellow;
+}
+.low {
+  background-color: green;
+}
+.moderate {
+  background-color: purple;
+}
+.high {
+  background-color: red;
+}

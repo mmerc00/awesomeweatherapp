@@ -42,6 +42,10 @@ You are required to submit the following for review:
 
 - The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
----
+-worked in a team with budding developers in the class to create this code
 
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+-started with html, where all the neccesary componenets were linked (weather API and )
+
+-init elements were added
+
+-attempted local storage
