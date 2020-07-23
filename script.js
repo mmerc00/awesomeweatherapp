@@ -83,7 +83,7 @@ searchBtn.on("click", function (event) {
     var temperature = response.main.temp;
     $("#temperature").text(temperature);
     console.log("Temperature:", temperature);
-    // humidity pullled from api that will display along everyth
+    // humidity pullled from api that will display along everything
     var humidity = response.main.humidity;
     $("#humidity").text(humidity);
     console.log("Humidity", humidity);
@@ -134,48 +134,44 @@ searchBtn.on("click", function (event) {
     });
   });
 });
-//add 5 day forecast/*
+// 5 day forecast that is giving me issues
 
-// var forecastURL =
-// "http://api.openweathermap.org/data/2.5/forecast?q=" +
-// citySearch +
-// "&appid=c7629276d88b73d9dee17485c554906b" +
-// "&units=imperial";
-// $.ajax({
-// url: forecastURL,
-// method: "GET",
-// }).then(function (response) {
-// console.log(response);
-// // day one
-// var firstDay = moment(response.list[0].dt_txt).format(
-//   "dddd MMMM Do YYYY"
-// );
-// $("#one").text(firstDay);
-// console.log(firstDay);
-// $("#temperature-one").text(response.list[0].main.temp);
-// $("#humidity-one").text(response.list[0].main.humidity);
-// $("#icon-image").text(response.list[0].wind.speed);
-// Day two
-//var secondtDay = moment(response.list[0].dt_txt).format(
-// //("dddd MMMM Do YYYY");
-// //);/*
-// $("#temperature-two").text(response.list[8].main.temp);
-// $("#humidity-two").text(response.list[8].main.humidity);
-// $("#wind-speed-two").text(response.list[8].wind.speed);
-// $("#pressure-two").text(response.list[8].main.pressure);
+var forecastURL =
+  "http://api.openweathermap.org/data/2.5/forecast?q=" +
+  citySearch +
+  "&appid=c7629276d88b73d9dee17485c554906b" +
+  "&units=imperial";
+$.ajax({
+  url: forecastURL,
+  method: "GET",
+}).then(function (response) {
+  console.log(response);
+  // day one
+  var firstDay = moment(response.list[0].dt_txt).format("dddd MMMM Do YYYY");
+  $("#one").text(firstDay);
+  console.log(firstDay);
+  $("#temperature-one").text(response.list[0].main.temp);
+  $("#humidity-one").text(response.list[0].main.humidity);
+  $("#icon-image").text(response.list[0].wind.speed);
+  //Day two
+  var secondtDay = moment(response.list[0].dt_txt).format("dddd MMMM Do YYYY");
+  $("#temperature-two").text(response.list[8].main.temp);
+  $("#humidity-two").text(response.list[8].main.humidity);
+  $("#wind-speed-two").text(response.list[8].wind.speed);
+  $("#pressure-two").text(response.list[8].main.pressure);
 
-// $("#temperature-three").text(response.list[16].main.temp);
-// $("#humidity-three").text(response.list[16].main.humidity);
-// $("#wind-speed-three").text(response.list[16].wind.speed);
-// $("#pressure-three").text(response.list[16].main.pressure);
+  $("#temperature-three").text(response.list[16].main.temp);
+  $("#humidity-three").text(response.list[16].main.humidity);
+  $("#wind-speed-three").text(response.list[16].wind.speed);
+  $("#pressure-three").text(response.list[16].main.pressure);
 
-// $("#temperature-four").text(response.list[24].main.temp);
-// $("#humidity-four").text(response.list[24].main.humidity);
-// $("#wind-speed-four").text(response.list[24].wind.speed);
-// $("#pressure-four").text(response.list[24].main.pressure);
+  $("#temperature-four").text(response.list[24].main.temp);
+  $("#humidity-four").text(response.list[24].main.humidity);
+  $("#wind-speed-four").text(response.list[24].wind.speed);
+  $("#pressure-four").text(response.list[24].main.pressure);
 
-// $("#temperature-five").text(response.list[32].main.temp);
-// $("#humidity-five").text(response.list[32].main.humidity);
-// $("#wind-speed-five").text(response.list[32].wind.speed);
-// $("#pressure-five").text(response.list[32].main.pressure);
-// });
+  $("#temperature-five").text(response.list[32].main.temp);
+  $("#humidity-five").text(response.list[32].main.humidity);
+  $("#wind-speed-five").text(response.list[32].wind.speed);
+  $("#pressure-five").text(response.list[32].main.pressure);
+});
