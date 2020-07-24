@@ -53,7 +53,7 @@ searchBtn.on("click", function (event) {
   console.log("City Search:", citySearch);
   var apiKey = "b4ca2617fda8551aa1b532379a0245d5";
   var queryURLCurrent =
-    " http://api.openweathermap.org/data/2.5/weather?q=" +
+    " https://api.openweathermap.org/data/2.5/weather?q=" +
     citySearch +
     "&units=imperial&appid=" +
     apiKey;
@@ -76,7 +76,7 @@ searchBtn.on("click", function (event) {
     console.log("Date Display:", dateDisplay);
     // icon var that will display in card upon search
     var iconCode = response.weather[0].icon;
-    var weatherIcon = "http://openweathermap.org/img/w/" + iconCode + ".png";
+    var weatherIcon = "https://openweathermap.org/img/w/" + iconCode + ".png";
     console.log(iconCode);
     $("#icon-image").attr("src", weatherIcon);
     // tempature var that pulls temp from api and fills it in card
@@ -95,7 +95,7 @@ searchBtn.on("click", function (event) {
     var latitude = response.coord.lat;
     var longitude = response.coord.lon;
     var uvURL =
-      "http://api.openweathermap.org/data/2.5/uvi?appid=" +
+      "https://api.openweathermap.org/data/2.5/uvi?appid=" +
       apiKey +
       "&lat=" +
       latitude +
@@ -137,9 +137,9 @@ searchBtn.on("click", function (event) {
 // 5 day forecast that is giving me issues
 
 var forecastURL =
-  "http://api.openweathermap.org/data/2.5/forecast?q=" +
+  "https://api.openweathermap.org/data/2.5/forecast?q=" +
   citySearch +
-  "&appid=c7629276d88b73d9dee17485c554906b" +
+  "&appid=b4ca2617fda8551aa1b532379a0245d5" +
   "&units=imperial";
 $.ajax({
   url: forecastURL,
@@ -154,7 +154,7 @@ $.ajax({
   $("#humidity-one").text(response.list[0].main.humidity);
   $("#icon-image").text(response.list[0].wind.speed);
   //Day two
-  var secondtDay = moment(response.list[0].dt_txt).format("dddd MMMM Do YYYY");
+  var secondDay = moment(response.list[0].dt_txt).format("dddd MMMM Do YYYY");
   $("#temperature-two").text(response.list[8].main.temp);
   $("#humidity-two").text(response.list[8].main.humidity);
   $("#wind-speed-two").text(response.list[8].wind.speed);
