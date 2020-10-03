@@ -106,7 +106,7 @@ function getUVI(latitude, longitude) {
     latitude +
     "&lon=" +
     longitude;
-  //uv index stuff that I am not sure why isnt working
+  //uv index stuff
   $.ajax({
     url: uvURL,
     method: "GET",
