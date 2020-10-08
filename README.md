@@ -1,6 +1,6 @@
 
 # Weather Dashboard
-User can access the currebt weather info of any desired city.
+User can access the current weather info of any desired city.
 
 ## Technologies Used
 
