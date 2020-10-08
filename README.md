@@ -1,21 +1,22 @@
-# 06 Server-Side APIs: Weather Dashboard
 
-<img src="assets/weatherapp.png">
+# Weather Dashboard
+User can access the currebt weather info of any desired city.
 
-You are required to submit the following for review:
+## Technologies Used
 
-- The URL of the deployed application.
+- Weather Ap API
+- Chrome
+- Javascript
+- HTML
+- CSS
+- Github
+- Heroku
 
-- The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
--worked in a team with budding developers in the class to create this code
+## License
 
--started with html, where all the neccesary componenets were linked (weather API and )
+N/A
 
--init elements were added
+## Prequisites
 
--functions that connected the api with the weather data (onclick events)
-
--working on 5 day forecast to link with html
-
--attempted saving city names and local storage
+Working browser
